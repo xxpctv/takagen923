@@ -64,7 +64,10 @@ public class ApiConfig {
     private List<IJKCode> ijkCodes;
     private String spider = null;
     public String wallpaper = "";
-
+    public String tvtalk = "";
+    public String daily_sentence = "";
+    
+    
     private final SourceBean emptyHome = new SourceBean();
 
     private final JarLoader jarLoader = new JarLoader();
@@ -309,6 +312,11 @@ public class ApiConfig {
         spider = DefaultConfig.safeJsonString(infoJson, "spider", "");
         // wallpaper
         wallpaper = DefaultConfig.safeJsonString(infoJson, "wallpaper", "");
+        // tvtalk
+       tvtalk = DefaultConfig.safeJsonString(infoJson, "tvtalk", "");
+        // daily_sentence
+       daily_sentence = DefaultConfig.safeJsonString(infoJson, "daily_sentence", "");
+       
         // 远端站点源
         SourceBean firstSite = null;
         for (JsonElement opt : infoJson.get("sites").getAsJsonArray()) {
